@@ -1,6 +1,6 @@
 🩺 Book My Care Book My Care is a healthcare management platform that connects patients, doctors, blood donors, and pharmacies in one place. It simplifies hospital appointment booking, blood donation requests, and online medicine ordering — all through a single platform. 💊❤
 
-Deploy Link: book-my-care1-git-main-saidivya-1612s-projects.vercel.app
+Deploy Link: https://book-my-care1-git-main-saidivya-1612s-projects.vercel.app
 Production Deployment (Recommended) Live Demo: Deploy to Vercel ← One-Click Deploy! ✅ Status: Production Ready 🎯 Features:Your one-stop platform for booking doctors, ordering medicines, and connecting blood donors — all in one care hub. 📱 Mobile: Fully responsive design
 
 🔧 Local Development Frontend Demo: http://localhost:3000/demo.html Backend API: http://localhost:8000/ Status: Development Mode
