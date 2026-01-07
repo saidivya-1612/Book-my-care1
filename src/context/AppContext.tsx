@@ -13,7 +13,7 @@ interface AppState {
 
 interface AppContextType extends AppState {
   login: (email: string, password: string) => boolean;
-  signup: (name: string, email: string, password: string, role: User['role']) => boolean;
+  signup: (name: string, email: string, phone: string, password: string, role: User['role']) => boolean;
   logout: () => void;
   addAppointment: (appointment: Omit<Appointment, 'id'>) => void;
   addDonor: (donor: Omit<Donor, 'id'>) => void;
@@ -59,11 +59,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
     return false;
   };
 
-  const signup = (name: string, email: string, password: string, role: User['role']): boolean => {
+  const signup = (name: string, email: string, phone: string, password: string, role: User['role']): boolean => {
     if (state.users.find(u => u.email === email)) {
       return false;
     }
-    const newUser: User = { name, email, password, role };
+    const newUser: User = { name, email, phone, password, role };
     setState(prev => ({ ...prev, users: [...prev.users, newUser] }));
     return true;
   };
@@ -100,10 +100,12 @@ export function AppProvider({ children }: { children: ReactNode }) {
   };
 
   const addAlert = (message: string) => {
+    if (!state.currentUser) return;
     const newAlert: Alert = {
       id: generateId(),
       message,
       timestamp: new Date().toLocaleString(),
+      userEmail: state.currentUser.email,
     };
     setState(prev => ({ ...prev, alerts: [newAlert, ...prev.alerts] }));
   };

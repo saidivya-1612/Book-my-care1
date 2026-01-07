@@ -1,6 +1,7 @@
 export interface User {
   name: string;
   email: string;
+  phone: string;
   password: string;
   role: 'Patient' | 'Doctor' | 'Donor' | 'Admin';
 }
@@ -58,6 +59,7 @@ export interface Alert {
   id: string;
   message: string;
   timestamp: string;
+  userEmail: string;
 }
 
 export type TabName = 'home' | 'appointments' | 'blood' | 'medicine' | 'alerts';
