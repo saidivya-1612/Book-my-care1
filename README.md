@@ -1,73 +1,51 @@
-# Welcome to your Lovable project
+🩺 Book My Care Book My Care is a healthcare management platform that connects patients, doctors, blood donors, and pharmacies in one place. It simplifies hospital appointment booking, blood donation requests, and online medicine ordering — all through a single platform. 💊❤
 
-## Project info
+Deploy Link: https://simply-get-a-site-8ynunbmex-saidivya-1612s-projects.vercel.app
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Production Deployment (Recommended) Live Demo: Deploy to Vercel ← One-Click Deploy! ✅ Status: Production Ready 🎯 Features:Your one-stop platform for booking doctors, ordering medicines, and connecting blood donors — all in one care hub. 📱 Mobile: Fully responsive design
 
-## How can I edit this code?
+🔧 Local Development Frontend Demo: http://localhost:3000/demo.html Backend API: http://localhost:8000/ Status: Development Mode
 
-There are several ways of editing your application.
+🚀 Quick Deploy (Production) Click the Deploy to Vercel button above
 
-**Use Lovable**
+Follow the simple setup prompts
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Your Book My Care will be live in minutes!
 
-Changes made via Lovable will be committed automatically to this repo.
+💻 Quick Start (Local Development) Start the servers and access the platform locally:
 
-**Use your preferred IDE**
+Clone the Repository
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+git clone https://github.com/saidivya-1612/simply-get-a-site.git cd simply-get-a-site.git Start Frontend Server
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+cd frontend npm install npm run dev ✅ Frontend will be available at: http://localhost:3000/demo.html
 
-Follow these steps:
+Start Backend API (in a new terminal)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+cd backend pip install -r requirements.txt uvicorn main:app --reload ✅ Backend API will be available at: http://localhost:8000/️
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+🛠 Technology Stack Frontend: HTML, CSS, JavaScript, React Backend: Node.js / Express.js Database: MongoDB (Mongoose ORM) Deployment: Netlify (Frontend), Render (Backend) Storage: Cloud / Local Uploads (for reports & prescriptions)
 
-# Step 3: Install the necessary dependencies.
-npm i
+📁 Project Structure bookmycare/ ├── frontend/ # React web app for users and admins ├── backend/ # Express.js API server ├── database/ # MongoDB connection and schema models ├── uploads/ # Folder to store uploaded medical files ├── public/ # Static assets (images, icons, etc.) └── README.md # Project documentation 💡 Key Features 👩‍⚕️ Patient & Doctor Management Easy appointment booking
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Doctor availability and specialization listing
 
-**Edit a file directly in GitHub**
+Patient profile management
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🩸 Blood Donation Module Register as donor or request blood
 
-**Use GitHub Codespaces**
+Real-time donor availability search
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Alerts for urgent blood requirements
 
-## What technologies are used for this project?
+💊 Medicine Ordering Browse and order medicines online
 
-This project is built with:
+Upload prescription files
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Track order status
 
-## How can I deploy this project?
+🔔 Alert System Health and donation alerts
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Email or dashboard notifications
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+📁 File Uploads Secure upload and storage for prescriptions, reports, and medical records
