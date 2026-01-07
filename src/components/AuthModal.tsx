@@ -25,7 +25,9 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
 
   const [signupName, setSignupName] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
+  const [signupPhone, setSignupPhone] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
+  const [signupConfirmPassword, setSignupConfirmPassword] = useState('');
   const [signupRole, setSignupRole] = useState<User['role']>('Patient');
 
   const handleLogin = () => {
@@ -43,16 +45,26 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
   };
 
   const handleSignup = () => {
-    if (!signupName || !signupEmail || !signupPassword) {
+    if (!signupName || !signupEmail || !signupPhone || !signupPassword || !signupConfirmPassword) {
       toast.error('Please fill all fields');
       return;
     }
-    if (signup(signupName, signupEmail, signupPassword, signupRole)) {
+    if (signupPassword.length < 6) {
+      toast.error('Password must be at least 6 characters');
+      return;
+    }
+    if (signupPassword !== signupConfirmPassword) {
+      toast.error('Passwords do not match');
+      return;
+    }
+    if (signup(signupName, signupEmail, signupPhone, signupPassword, signupRole)) {
       toast.success('Account created! Please login');
       setActiveTab('login');
       setSignupName('');
       setSignupEmail('');
+      setSignupPhone('');
       setSignupPassword('');
+      setSignupConfirmPassword('');
     } else {
       toast.error('Email already registered');
     }
@@ -63,7 +75,9 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
     setLoginPassword('');
     setSignupName('');
     setSignupEmail('');
+    setSignupPhone('');
     setSignupPassword('');
+    setSignupConfirmPassword('');
   };
 
   return (
@@ -128,7 +142,6 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="Patient">Patient</SelectItem>
-                  <SelectItem value="Doctor">Doctor</SelectItem>
                   <SelectItem value="Donor">Blood Donor</SelectItem>
                   <SelectItem value="Admin">Admin</SelectItem>
                 </SelectContent>
@@ -159,12 +172,30 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
               />
             </div>
             <div>
-              <Label>Password</Label>
+              <Label>Phone Number</Label>
+              <Input
+                type="tel"
+                placeholder="Enter your phone number"
+                value={signupPhone}
+                onChange={(e) => setSignupPhone(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label>Password (min 6 characters)</Label>
               <Input
                 type="password"
                 placeholder="Create a password"
                 value={signupPassword}
                 onChange={(e) => setSignupPassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <Label>Confirm Password</Label>
+              <Input
+                type="password"
+                placeholder="Confirm your password"
+                value={signupConfirmPassword}
+                onChange={(e) => setSignupConfirmPassword(e.target.value)}
               />
             </div>
             <div>
