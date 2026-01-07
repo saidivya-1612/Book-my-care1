@@ -173,9 +173,8 @@ export function AuthModal({ open, onOpenChange, initialTab }: AuthModalProps) {
                 <SelectTrigger>
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+              <SelectContent>
                   <SelectItem value="Patient">Patient</SelectItem>
-                  <SelectItem value="Doctor">Doctor</SelectItem>
                   <SelectItem value="Donor">Blood Donor</SelectItem>
                 </SelectContent>
               </Select>
